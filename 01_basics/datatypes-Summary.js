@@ -37,3 +37,34 @@ const myFunction= function(){
 }
 
 console.log(typeof bigNumber);
+
+// *****************
+
+// There are two memories- Stack and Heap Memory
+
+// stack(Primitive), Heap is used with Non Primitive datatypes
+
+let myYoutubename="Adityadotcom";
+
+let anothername=myYoutubename;
+
+anothername="chaiaurcode";
+
+console.log(myYoutubename);
+
+console.log(anothername);
+
+// heap memory
+let userOne={
+
+  email: "usergoogle.com",
+  upi: "user@ybl"
+}
+
+let userTwo=userOne;
+
+userTwo.email="hitesh@google.com";
+
+console.log(userOne.email);
+
+console.log(userTwo.email);
