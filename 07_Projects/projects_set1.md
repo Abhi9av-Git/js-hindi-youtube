@@ -44,3 +44,35 @@ buttons.forEach(function(button) {
 
 
 ```
+
+## project 2 solution
+
+``` javascript
+const form=document.querySelector('form')
+
+form.addEventListener('submit', function(event) {
+
+  event.preventDefault()
+
+  const ht=parseInt(document.querySelector('#height').value)
+
+  const wt=parseInt(document.querySelector('#weight').value)
+
+  const result=document.querySelector('#results')
+
+  if (ht==='' || ht<0 || isNaN(ht)) {
+
+    result.innerHTML="Please give a valid height"
+  }
+  else if (wt==='' || wt<0 || isNaN(wt)) {
+
+    result.innerHTML="Please give a valid weight"
+  }
+  else {
+
+    const BMI=(wt/((ht*ht)/10000)).toFixed(2);
+    result.innerHTML=`BMI: ${BMI}`;
+  }
+});
+
+```
