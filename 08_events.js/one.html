@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+  <h2>Amazing image</h2>
+  <div>
+    <ul id="images">
+      <li><img width="200px" id="SA20" src="images/hq720.webp" alt="SA20"></li>
+      <li><img width="200px" id="WWE" src="images/hqdefault.webp" alt="WWE"></li>
+      <li><img width="200px" id="Premiere-league" src="images/image1.webp"></li>
+      <li><img width="200px" id="BBL" src="images/image2.webp"></li>
+      <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</li>
+    </ul>
+  </div>
+</body>
+<script>
+  // document.getElementById('WWE').onclick=function() {
+    // alert("Roman Reigns");
+  // }
+
+  // another approach to apply on click attribute
+
+  // document.getElementById('WWE').addEventListener('click', function(e) {
+
+    // console.log(e);
+  // }, false)
+
+  // document.getElementById('images').addEventListener('click', function(e) {
+
+  // console.log("clicked inside the ul");
+  // }, false) // in console you can check this will give msg when any of the picture is clicked
+
+  // document.getElementById('SA20').addEventListener('click', function(e) {
+
+  // console.log("SA20 clicked");
+  // }, false) // this will give msg "SA20 clicked" first and then "clicked inside the ul"
+
+  // document.getElementById('images').addEventListener('click', function(e) {
+
+  // console.log("clicked inside the ul");
+  // }, true) // in console you can check this will give msg when any of the picture is clicked
+
+  // document.getElementById('SA20').addEventListener('click', function(e) {
+
+  // console.log("SA20 clicked");
+  // }, true) // this will give msg "clicked inside the ul" first and then "SA20 clicked"
+
+  // third parameter that is used above is Event Propagation i.e false is default value that means it can be used and cannot be used
+  // false is used for event bubbling and true is used for event capturing
+  // if we want to use event capturing then we have to give third parameter as true
+
+  // Events that you have to study are given below
+
+  // type, timestamp, defaultPrevented  (mainly used with forms)
+  // target, toElement, srcElement, currentTarget
+  // clientX, clientY, screenX, screenY
+  // altKey, ctrlKey, shiftKey, keyCode
+
+
+  // document.getElementById('google').addEventListener('click', function(e) {
+
+    // e.preventDefault();
+
+    // e.stopPropagation();
+
+    // console.log("google clicked");
+  // }, false)
+
+  document.querySelector('#images').addEventListener('click', function(e) {
+
+    console.log(e.target.tagName);
+
+    if (e.target.tagName==='IMG') {
+
+      console.log(e.target.id);
+
+      let removeIt=e.target.parentNode;
+      removeIt.remove();
+    }
+
+    // another way to remove is given below
+    // removeIt.parentNode.removeChild(removeIt);
+  })
+</script>
+</html>
