@@ -192,3 +192,65 @@ function newGame() {
 }
 
 ```
+
+## project 5 solution code
+``` javascript
+
+const insert=document.querySelector('#insert')
+
+window.addEventListener('keydown', (e)=> {
+  insert.innerHTML=`<div class='color'>
+     <table>
+  <tr>
+    <th>key</th>
+    <th>keyCode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table> 
+  </div>
+  `;
+});
+
+
+```
+
+## project 6 solution code
+``` javascript
+
+const body=document.querySelector('body');
+
+const start=document.querySelector('#start');
+
+const stop=document.querySelector('#stop');
+
+const changeBackground=function() {
+
+  const randomNumber=(Math.round((Math.random())*1000000))+1;
+
+  body.style.background=`#${randomNumber}`;
+}
+
+let intervalId;
+
+start.addEventListener('click', function() {
+
+  if (intervalId==null) {
+
+    intervalId=setInterval(changeBackground, 1000)
+  }
+})
+
+stop.addEventListener('click', function() {
+
+  clearInterval(intervalId)
+
+  intervalId=null;
+  
+})
+
+```
